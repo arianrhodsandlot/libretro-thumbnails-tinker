@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>libretro-thumbnails-tinker</title>
+  </head>
+  <body>
+    <div style="padding-bottom: 5px">
+      <input lable="file" type="file" />
+    </div>
+    <div style="padding-bottom: 5px">
+      <button onclick="console.log('title')">title</button>
+      <button onclick="console.log('snap')">snap</button>
+      <button onclick="console.log('close')">close</button>
+    </div>
+    <script type="module">
+      import { Nostalgist } from 'https://esm.run/nostalgist'
+      const fileInput = document.querySelector('input')
+      const rom = await new Promise((resolve) =>
+        fileInput.addEventListener('change', (event) => {
+          resolve(event.target.files[0])
+        })
+      )
+      const nostalgist = await Nostalgist.launch({
+        core,
+        rom,
+        style: { position: 'static' },
+        size: { width, height },
+        retroarchConfig: {
+          aspect_ratio_index: '24',
+          video_aspect_ratio_auto: false,
+          rewind_enable: true,
+        },
+      })
+    </script>
+  </body>
+</html>

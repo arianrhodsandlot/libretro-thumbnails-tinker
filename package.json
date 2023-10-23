@@ -1,0 +1,21 @@
+{
+  "private": "true",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node src/index.js",
+    "lint": "eslint src"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "16.3.1",
+    "jsdom": "22.1.0",
+    "libretrodb": "1.0.0",
+    "lodash-es": "4.17.21",
+    "playwright": "1.39.0"
+  },
+  "devDependencies": {
+    "@arianrhodsandlot/eslint-config": "0.8.3",
+    "eslint": "8.52.0"
+  }
+}
